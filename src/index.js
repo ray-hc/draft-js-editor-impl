@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 
-// we now wrap App in a Provider
+// Render the React component in DOM.
 ReactDOM.render(
   <App />,
   document.getElementById('main'),

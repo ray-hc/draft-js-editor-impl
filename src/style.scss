@@ -1,8 +1,293 @@
+$lighterBox: -2px 2px 2px 2px rgba(0,0,0,0.2);
+$darkBox: 1px 1px 5px 5px rgba(0,0,0,0.1);
+$darkerBox: 6px 6px 5px 5px rgba(0,0,0,0.2);
+$smallBox:  1px 1px 2px 2px rgba(0,0,0,0.3);
+$curvedEdge: 8px;
+$bookCrease: #d6d6d6;
+$small: 500px;
+$medium: 900px;
+$emphTxt: 1.2rem;
+
+/* COLORS */
+$textColor: black;
+$errorColor: red;
+
+$lightGrey: #eeeeee;
+$teal: #207D79;
+$cream: #FBF6EF;
+$rainbow1: #e9b2b2;
+$rainbow2: #e4e3ae;
+$rainbow3: #b5ebc1;
+$rainbow4: #b5c8eb;
+$rainbow5: #ecd8be;
+
 body, html {
-    font-family: "Roboto", sans-serif;
-    height: 100%;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: $cream;
+  color: $textColor;
+  margin: 0px;
+
+  @media only screen and (max-width: $medium) {
+    font-size: 14px;
+  }
+}
+
+/* Homepage */
+.page-container {
+  font-family: 'Lato';
+  background-color: white;
+  width: 90%;
+  height: 90%;
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  border-radius: $curvedEdge;
+  box-shadow: $lighterBox;
+  padding: 10px 0px;
+
+  & .no-border {
+    box-shadow: none;
+  }
+}
+
+.pages-link{
+  text-decoration: none;
+  color:#207D79;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  // width: 50vw;
+  // min-width: 200px;
+  max-width: 80vw;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: $curvedEdge;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+
+  &:hover, &:focus {
+    box-shadow: $lighterBox;
+  }
+}
+
+.custom-file-upload {
+  border-radius: $curvedEdge;
+  padding: $curvedEdge;
+  margin-top: 1rem;
+  margin-right: $curvedEdge;
+  font-size: $emphTxt;
+  background-color: $rainbow5;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: $darkerBox;
   }
 
+  input[type="file"] {
+    display: none;
+  }
+}
+
+/* BUTTONS */
+
+button, .fake-button, .icon-button {
+  border: none;
+  outline: none;
+  margin: 5px;
+  font-family: 'Lora', serif;
+}
+
+button, .fake-button {
+  border-radius: $curvedEdge;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #207D79;
+  
+  &:hover {
+    background-color: #E5E5E5;
+  }
+}
+
+.icon-button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgb(19, 19, 19);
+    color: white;
+  }
+}
+
+/* PAGE */
+
+
+/* RANDOM HELPER CLASSES */
+
+.error-msg {
+  color: $errorColor;
+}
+
 .active {
-  color: blue;
+  color: rgb(42, 158, 110);
+}
+
+.no-underline-link {
+  text-decoration: none;
+}
+
+.invisible {display: none !important}
+
+.fill {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.margin-left {
+  margin-left: 15px;
+}
+
+.shadow {
+  box-shadow: $darkBox;
+}
+
+@media only screen and (max-width: $medium) {
+  .min-width {
+    min-width: 60vw;
+    margin: auto;
+  }
+}
+
+/* Editor */
+.DraftEditor-root {
+  max-width: 100%;
+  
+
+  iframe {
+    min-height: 300px;
+  }
+}
+
+.iframe-resizer {
+  position: relative;
+  padding-top: 50%;
+  min-width: 100%;
+
+  iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+.public-DraftStyleDefault-ltr {
+  margin-bottom: 1rem;
+}
+
+.DraftEditor-editorContainer {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0.5em;
+  border: 4px dotted $rainbow4 !important;
+}
+
+.no-border .DraftEditor-editorContainer{
+  border: 0px dotted black !important;
+}
+
+.toolbars {
+  display: flex;
+  margin-left: 1rem;
+
+  @media screen and (max-width: $medium) {
+    flex-flow: column nowrap;
+  }
+
+  div button {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.4);
+    }
+  }
+
+  div {
+    border-radius: $curvedEdge;
+    padding: 0px 5px;
+    margin: 7px;
+    margin-left: 0px;
+  }
+
+  .buttons {
+    @media screen and (min-width: $medium) {
+      display: none;
+    }
+  }
+
+  div:not(.buttons) {
+    @media screen and (max-width: $medium) {
+      display: none;
+
+      &.show {
+        margin-top: 0px;
+        display: block;
+      }
+    }
+  }
+
+  .block-type-toolbar, .type-active {
+    background-color: #a69aaa;
+  }
+  .style-toolbar, .style-active {
+    background-color: #a3b9c4;
+  }
+  .media-toolbar, .media-active {
+    background-color: $rainbow1;
+  }
+
+}
+
+.modal-wrapper {
+  background-color: rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+}
+
+.media-picker {
+  background-color: white;
+  color: $textColor;
+  border-radius: $curvedEdge;
+  padding: $curvedEdge;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 95%;
 }
