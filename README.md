@@ -1,6 +1,8 @@
 # Draft.JS Editor Implementation
 
-This repository has my extension/implementation of Facebook's Draft.js editor, which provides a React-based rich-text editor framework. This was created by me for my team's Full-Stack Web Development final project, Our Stories (demo [here](https://cs52-ourstories.netlify.app/)). I have tidied up some of the code to make the rich-text editor a standalone project, which you can see here!
+This repository has my extension/implementation of Facebook's Draft.js editor, which provides a React-based rich-text editor framework. This was created by me for my team's Full-Stack Web Development final project, Our Stories (demo [here](https://cs52-ourstories.netlify.app/)). I have tidied up some of the code to make the rich-text editor a standalone project, which you can see [here](https://brave-galileo-37b202.netlify.app/)!
+
+*In final project, editor state was saved to database. Here, editor state saves to local storage*.
 
 ## Editor Components
 
